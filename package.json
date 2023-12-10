@@ -1,0 +1,19 @@
+{
+  "name": "@ershisan99/create-react-component",
+  "version": "0.1.1",
+  "private": false,
+  "repository": "https://github.com/ershisan99/create-react-component",
+  "description": "A simple CLI tool to create react component",
+  "dependencies": {
+    "go-npm": "^0.1.9"
+  },
+  "scripts": {
+    "postinstall": "go-npm install",
+    "preuninstall": "go-npm uninstall"
+  },
+  "goBinary": {
+    "name": "create-react-component",
+    "path": "./bin",
+    "url": "https://github.com/ershisan99/create-react-component/releases/download/v{{version}}/create-react-component_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  }
+}
