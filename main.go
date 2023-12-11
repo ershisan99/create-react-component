@@ -106,8 +106,8 @@ export const Default: Story = {
 	}
 
 	// Execute formatting and linting commands
-	runCommand("pnpm", "run", "format:file", dirPath)
-	runCommand("pnpm", "run", "lint:file", dirPath+"/**")
+	runCommand(currentDir, "pnpm", "run", "format:file", dirPath)
+	runCommand(currentDir, "pnpm", "run", "lint:file", dirPath+"/**")
 
 	return nil
 }
@@ -149,8 +149,9 @@ func updateMainIndex(name, currentDir string) error {
 	return nil
 }
 
-func runCommand(command string, args ...string) {
+func runCommand(currentDir, command string, args ...string) {
 	cmd := exec.Command(command, args...)
+	cmd.Dir = currentDir // Set the working directory
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println("Error executing command:", err)
