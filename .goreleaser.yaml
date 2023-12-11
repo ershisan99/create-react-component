@@ -13,9 +13,11 @@ before:
     - go mod tidy
 
 builds:
-  - env:
-      - CGO_ENABLED=0
+  - binary: create-react-component
     goos:
-      - linux
       - windows
       - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64

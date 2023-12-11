@@ -4,8 +4,12 @@
   "private": false,
   "repository": "https://github.com/ershisan99/create-react-component",
   "description": "A simple CLI tool to create react component",
+  "files": [
+    "dist",
+    "postinstall.js"
+  ],
   "dependencies": {
-    "@gzuidhof/go-npm": "^0.1.13"
+    "@ershisan99/go-npm": "^0.1.13"
   },
   "scripts": {
     "postinstall": "go-npm install",
