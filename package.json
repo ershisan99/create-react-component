@@ -9,7 +9,7 @@
     "postinstall.js"
   ],
   "dependencies": {
-    "@ershisan99/go-npm": "^0.1.13"
+    "@ershisan99/go-npm": "^0.1.14"
   },
   "scripts": {
     "postinstall": "go-npm install",
