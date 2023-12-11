@@ -52,19 +52,16 @@ func createComponent(name, currentDir string) error {
 	}
 
 	// Component content
-	componentContent := fmt.Sprintf(`import React from 'react'
-import s from './%s.module.scss'
+	componentContent := fmt.Sprintf(`import s from './%s.module.scss'
 export type %sProps = {}
 
-export const %s: React.FC<%sProps> = ({}) => {
-  return <div className={s.container}>%s</div>
+export const %s = ({}: %sProps) => {
+  return <div>%s</div>
 }
 `, name, capitalizedName, capitalizedName, capitalizedName, capitalizedName)
 
 	// SASS content
-	sassContent := `.container {
-  // styles go here
-}`
+	sassContent := ``
 
 	// Index content
 	indexContent := fmt.Sprintf(`export * from './%s'`, name)
@@ -106,8 +103,8 @@ export const Default: Story = {
 	}
 
 	// Execute formatting and linting commands
-	runCommand(currentDir, "pnpm", "run", "format:file", dirPath)
-	runCommand(currentDir, "pnpm", "run", "lint:file", dirPath+"/**")
+	runCommand(currentDir, "npm", "run", "format:file", dirPath)
+	runCommand(currentDir, "npm", "run", "lint:file", dirPath+"/**")
 
 	return nil
 }
