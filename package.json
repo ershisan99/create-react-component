@@ -1,6 +1,6 @@
 {
   "name": "@ershisan99/create-react-component",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "repository": "https://github.com/ershisan99/create-react-component",
   "description": "A simple CLI tool to create react component",
